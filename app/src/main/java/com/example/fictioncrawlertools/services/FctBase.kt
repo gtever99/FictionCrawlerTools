@@ -12,7 +12,7 @@ abstract class FctBase constructor(
     var baseUrl: String = ""
 
     init {
-        baseUrl = webType.url;
+        baseUrl = webType.url
     }
 
     /**
@@ -37,7 +37,7 @@ abstract class FctBase constructor(
         ).get()
 
         Log.v("获取页面内容", "请求结束！")
-        return document;
+        return document
     }
 
     /**
@@ -56,7 +56,7 @@ abstract class FctBase constructor(
             retryCount ++
             Log.w("获取页面内容", "请求错误，正在重试，重试次数：${retryCount}")
         }
-        return docRes;
+        return docRes
     }
     private suspend fun getWebHtmlCore(path: String, formData: Map<String, String>) : Document? {
         Log.v("获取页面内容", "开始获取，url：${path}，请求参数：${formData}")
@@ -71,6 +71,6 @@ abstract class FctBase constructor(
         } catch (e : Exception)  {
             println("错误消息：${e}")
         }
-        return null;
+        return null
     }
 }

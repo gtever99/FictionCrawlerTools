@@ -40,7 +40,7 @@ class HomeFragment : Fragment() {
     @OptIn(DelicateCoroutinesApi::class)
     private fun test1ClickHandle(view: View) {
         GlobalScope.launch {
-            val searchList = FctController().searchFiction("赤心");
+            val searchList = FctController().searchFiction("赤心")
             if (searchList !== null) {
                 withContext(Dispatchers.Main) {
                     val mMyAdapter = SearchListAdapter(searchList)
@@ -52,7 +52,7 @@ class HomeFragment : Fragment() {
 
     class SearchListAdapter(private val data: MutableList<SearchModel>) : RecyclerView.Adapter<SearchListAdapter.ViewHolder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            val view = View.inflate(parent.context, R.layout.home_search_list_item, null);
+            val view = View.inflate(parent.context, R.layout.home_search_list_item, null)
             return ViewHolder(view)
         }
 
